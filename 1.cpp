@@ -1,23 +1,30 @@
- // Ficha 6
-002 /* funciones */
-003 #include <iostream.h>
-004 int checking (int i, int j); //declaración función (prototipo)
-005 int main (void) //programa principal
-006 {
-007 int i;
-008 cout<< "escribe un numero"<<endl; cin>>i;
-009 int j;
-010 cout<<"escribe otro numero"<<endl;cin>>j;
-011 if (!checking(i,j)) //llamada a la función 
-//(si la función retorna 0)
-012 cout<<i<<" es mayor que "<<j<<endl;
-013 else //(si la función retorna 1)
-014 cout<<i<<" es menor que "<<j<<endl;
-015 return 0;
-016 }
-017 int checking (int i, int j) //definición de la función 
-//(implementación)
-018 {
-019 if (i<j) return 1;
-020 return 0;
-021 }
+// Ficha 6
+/* el programa pregunta dos números que operación quieres hacer y muestra el
+resultado */
+#include <iostream.h>
+double Suma (double x, double y); //declaración función Suma
+double Producto (double x, double y); //declaración función Producto
+int main (void) //programa principal
+{
+double a, b;
+int c;
+cout << "escribe un numero"<< endl; cin>>a;
+cout << "escribe otro número"<<endl; cin>>b;
+cout <<"Que operación deseas hacer, 1(suma), 2(producto)"<<endl;
+cin>>c;
+if (c==1)
+cout <<"el resultado de la suma es:"<<Suma(a,b)<<endl;
+else
+cout<<"el resultado del producto es:"<<Producto(a,b)<<endl;
+return 0;
+}
+double Suma (double x, double y) //definición función Suma
+{
+double z;
+z=x+y;
+return z;
+}
+double Producto (double x, double y) //definición función Producto
+{
+return (x*y);
+}
